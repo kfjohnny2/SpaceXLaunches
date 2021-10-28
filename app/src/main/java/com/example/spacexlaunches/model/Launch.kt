@@ -11,5 +11,8 @@ data class Launch(
     val launchDateUtc: String,
     @SerializedName(value = "launch_date_unix")
     val launchDateUnix: Long,
-    val rocket: Rocket
+    @SerializedName(value = "land_success")
+    val landSuccess: Boolean,
+    val rocket: Rocket,
+    val links: Links
 )

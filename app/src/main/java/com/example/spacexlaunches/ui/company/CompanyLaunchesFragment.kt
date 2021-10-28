@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.spacexlaunches.R
 import com.example.spacexlaunches.base.BaseFragment
 import com.example.spacexlaunches.databinding.FragmentCompanyLaunchesBinding
+import com.example.spacexlaunches.ui.company.adapters.LaunchesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -41,6 +44,16 @@ class CompanyLaunchesFragment : BaseFragment<FragmentCompanyLaunchesBinding>() {
         with(companyLaunchesViewModel){
             companyData.observe(viewLifecycleOwner, {
                 Log.i(fragmentTag(), it.toString())
+            })
+
+            launchesList.observe(viewLifecycleOwner, {
+                Log.i(fragmentTag(), it.toString())
+                with(binding.rvLaunches) {
+                    adapter = LaunchesAdapter(it.toMutableList())
+                    layoutManager = LinearLayoutManager(context)
+                    addItemDecoration(DividerItemDecoration(context, LinearLayoutManager.VERTICAL))
+                    setHasFixedSize(true)
+                }
             })
         }
     }

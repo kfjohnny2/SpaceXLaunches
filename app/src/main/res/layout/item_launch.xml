@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="launchViewModel"
+            type="com.example.spacexlaunches.ui.company.adapters.LaunchViewModel" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@android:color/darker_gray"
+        app:cardCornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_mission_patch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/ic_launcher"
+                app:glideSrc="@{launchViewModel.getMissionPatch()}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_mission_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standard_margin"
+                android:text="Mission:"
+                app:layout_constraintStart_toEndOf="@id/iv_mission_patch"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_mission_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standard_half_margin"
+                android:maxWidth="160dp"
+                app:layout_constraintStart_toEndOf="@id/txt_days_label"
+                app:layout_constraintTop_toTopOf="parent"
+                app:mutableText="@{launchViewModel.launchMissionName}"
+                tools:text="{mission name}" />
+
+            <TextView
+                android:id="@+id/txt_date_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date/time:"
+                app:layout_constraintStart_toStartOf="@id/txt_mission_name_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_mission_name" />
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standard_half_margin"
+                android:maxWidth="160dp"
+                app:layout_constraintStart_toEndOf="@id/txt_days_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_mission_name"
+                app:mutableText="@{launchViewModel.launchDateTime}"
+                tools:text="{date} at {time}" />
+
+            <TextView
+                android:id="@+id/txt_rocket_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rocket:"
+                app:layout_constraintStart_toStartOf="@id/txt_mission_name_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_date" />
+
+            <TextView
+                android:id="@+id/txt_rocket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standard_half_margin"
+                android:maxWidth="160dp"
+                app:layout_constraintStart_toEndOf="@id/txt_days_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_date"
+                app:mutableText="@{launchViewModel.launchRocket}"
+                tools:text="{name} / {type}" />
+
+            <TextView
+                android:id="@+id/txt_days_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Days:\n{since/from} now:"
+                app:layout_constraintStart_toStartOf="@id/txt_mission_name_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_rocket" />
+
+            <TextView
+                android:id="@+id/txt_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/standard_half_margin"
+                android:maxWidth="160dp"
+                app:layout_constraintStart_toEndOf="@id/txt_days_label"
+                app:layout_constraintTop_toBottomOf="@id/txt_rocket"
+                app:mutableText="@{launchViewModel.launchDaysSince}"
+                tools:text="{today - launch date}" />
+
+            <CheckBox
+                android:id="@+id/cb_was_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="@{launchViewModel.wasSuccessful()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:enabled="false"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
