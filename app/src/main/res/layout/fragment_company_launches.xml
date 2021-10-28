@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Company"
+                android:text="@string/company_launch_company_title"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -47,7 +47,8 @@
             android:gravity="center_vertical"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_company_title" />
+            app:layout_constraintTop_toBottomOf="@+id/ll_company_title"
+            android:paddingHorizontal="@dimen/standard_half_margin"/>
 
         <LinearLayout
             android:id="@+id/ll_launches_title"
@@ -63,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Company"
+                android:text="@string/company_launches_launches_title"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -74,6 +75,7 @@
             android:id="@+id/rv_launches"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/standard_half_margin"
             app:layout_constraintTop_toBottomOf="@id/ll_launches_title"
             />
 

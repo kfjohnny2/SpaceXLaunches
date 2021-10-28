@@ -3,4 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="company_launches_info">%s was founded by %s in %d. It has now %s employees, %d launch sites, and is valued at USD %d</string>
+    <string name="launch_days_since_from_now_label">Days:\n{since/from} now:</string>
+    <string name="launch_rocket_label">Rocket:</string>
+    <string name="launch_date_time_label">Date/time:</string>
+    <string name="launch_mission_label">Mission:</string>
+    <string name="company_launch_company_title">Company</string>
+    <string name="company_launches_launches_title">Launches</string>
 </resources>
