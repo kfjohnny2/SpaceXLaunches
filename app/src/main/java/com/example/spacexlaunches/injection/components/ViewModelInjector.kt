@@ -21,7 +21,7 @@ interface ViewModelInjector {
 
     @Component.Factory
     interface Factory {
-
+        // Creates our ViewModelInjector
         fun create(@BindsInstance networkModule: NetworkModules): ViewModelInjector
     }
 }

@@ -10,6 +10,13 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleOwner
 
+/**
+ * BaseFragment that defines default behaviour of our fragments that will contain DataBinding components
+ *
+ * @param D Template class for the DataBinding implementation object
+ *
+ * @author Johnnylee Rocha
+ */
 abstract class BaseFragment<D : ViewDataBinding> : Fragment(), LifecycleOwner {
     protected lateinit var binding: D
 
@@ -24,6 +31,7 @@ abstract class BaseFragment<D : ViewDataBinding> : Fragment(), LifecycleOwner {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Setup databinding and inflates it
         binding = DataBindingUtil.inflate(inflater, layoutRes(), container, false)
         binding.lifecycleOwner = this
 

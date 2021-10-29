@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/companyLaunchesFragment">
 
     <fragment
         android:id="@+id/companyLaunchesFragment"
         android:name="com.example.spacexlaunches.ui.company.CompanyLaunchesFragment"
-        android:label="CompanyLaunchesFragment" />
+        android:label="CompanyLaunchesFragment" >
+        <action
+            android:id="@+id/action_companyLaunchesFragment_to_filtersFragment"
+            app:destination="@id/filtersFragment" />
+        <argument
+            android:name="filters"
+            app:argType="com.example.spacexlaunches.model.Filters"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment"
+        android:name="com.example.spacexlaunches.ui.filter.FiltersFragment"
+        android:label="filters_fragment"
+        tools:layout="@layout/filters_fragment" >
+        <action
+            android:id="@+id/action_filtersFragment_to_companyLaunchesFragment"
+            app:destination="@id/companyLaunchesFragment" />
+    </fragment>
 </navigation>

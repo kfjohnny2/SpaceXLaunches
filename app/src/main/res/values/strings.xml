@@ -9,4 +9,5 @@
     <string name="launch_mission_label">Mission:</string>
     <string name="company_launch_company_title">Company</string>
     <string name="company_launches_launches_title">Launches</string>
+    <string name="generic_error_title">Error</string>
 </resources>

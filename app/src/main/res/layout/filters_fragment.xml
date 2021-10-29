@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.filter.FiltersFragment"
+    android:padding="@dimen/standard_double_margin">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/il_year"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_year"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Year"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/cb_was_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Was Success"
+        app:layout_constraintTop_toBottomOf="@id/il_year"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txt_sort_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sorted By:"
+        app:layout_constraintTop_toBottomOf="@id/cb_was_success"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <RadioGroup
+        android:id="@+id/rg_sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_sort_label"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <RadioButton
+            android:id="@+id/rb_asc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ascending"/>
+        <RadioButton
+            android:id="@+id/rb_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descending"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bt_apply_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/rg_sort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Apply"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

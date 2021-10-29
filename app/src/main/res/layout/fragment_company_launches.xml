@@ -74,8 +74,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_launches"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:padding="@dimen/standard_half_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_launches_title" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

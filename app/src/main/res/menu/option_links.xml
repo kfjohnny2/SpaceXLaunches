@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_article"
+        android:title="Article"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_wikipedia"
+        android:title="Wikipedia"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_videos"
+        android:title="Video"
+        app:showAsAction="never"/>
+</menu>

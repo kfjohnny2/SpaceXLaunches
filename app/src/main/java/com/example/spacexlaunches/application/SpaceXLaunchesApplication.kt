@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import dagger.hilt.android.HiltAndroidApp
 
+/**
+ * Starts Application for the code generation of the Hilt Components
+ */
 @HiltAndroidApp
 class SpaceXLaunchesApplication : Application() {
 

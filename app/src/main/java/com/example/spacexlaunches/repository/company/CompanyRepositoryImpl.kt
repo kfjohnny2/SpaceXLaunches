@@ -5,6 +5,9 @@ import com.example.spacexlaunches.network.CompanyEndpoints
 import com.example.spacexlaunches.utils.helpers.ResultHandler
 import retrofit2.http.Path
 
+/**
+ * CompanyRepository interface implementation
+ */
 class CompanyRepositoryImpl(val companyEndpoints: CompanyEndpoints) : CompanyRepository {
     override suspend fun getCompanyInfo(): ResultHandler<CompanyInfo> {
         val result = companyEndpoints.getCompanyInfo()

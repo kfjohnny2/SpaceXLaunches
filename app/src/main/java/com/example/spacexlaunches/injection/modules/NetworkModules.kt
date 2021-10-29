@@ -15,6 +15,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * Module for providing our Endpoints interface instances
+ *
+ */
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModules {
