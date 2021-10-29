@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.spacexlaunches.base.BaseViewModel
 import com.example.spacexlaunches.model.Launch
 import com.example.spacexlaunches.model.Links
+import com.example.spacexlaunches.utils.extentions.formatDate
 
 class LaunchViewModel : BaseViewModel() {
     val launchMissionPatch = MutableLiveData<String>()
@@ -17,9 +18,9 @@ class LaunchViewModel : BaseViewModel() {
     fun bind(launch: Launch){
         launchMissionPatch.value = launch.links.missionPatchSmall
         launchMissionName.postValue(launch.missionName)
-        launchDateTime.postValue(launch.launchDateUtc)
+        launchDateTime.postValue(launch.launchDateUnix.formatDate("dd/MM/yyyy 'at' HH:mm"))
         launchRocket.postValue("${launch.rocket.name} ${launch.rocket.type}")
-        launchDaysSince.postValue(launch.launchDateUtc)
+        launchDaysSince.postValue(launch.launchDateLocal)
         launchWasSuccess.postValue(launch.landSuccess)
         launchLinks.postValue(launch.links)
     }
